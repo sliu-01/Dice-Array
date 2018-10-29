@@ -6,16 +6,16 @@ public class DiceArrayMain {
 		Dice die2 = new Dice();
 		
 		int[] roll = new int[1000];
-		int[] counter = new int[13];
+		int[] counter = new int[11];
 		
 		for (int i = 0; i < 1000; i++)
 		{
 			int currentRoll = die1.roll() + die2.roll();
 			roll [i] = currentRoll;
 			
-			for (int j = 2; j < 13; j++)
+			for (int j = 0; j < 11; j++)
 			{
-				if (currentRoll == j)
+				if (currentRoll - 2 == j)
 				{
 					counter[j] ++;
 				}
@@ -23,9 +23,9 @@ public class DiceArrayMain {
 			
 		}
 		
-		for (int i = 2; i < 13; i++)
+		for (int i = 0; i < 11; i++)
 		{
-			System.out.printf("%-2s: %3d\n", (i), counter[i]);
+			System.out.printf("%-2s: %3d\n", (i + 2), counter[i]);
 		}
 
 	}
